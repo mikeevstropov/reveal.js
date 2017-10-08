@@ -332,7 +332,23 @@
 		// Loads the dependencies and continues to #start() once done
 		load();
 
+        // Fix slide position on re-initialization
+        slide(0);
+
 	}
+
+    /**
+     * Destroy
+     */
+    function destroy() {
+
+        // Make sure we only initialize once
+        if( initialized === false ) return;
+
+        initialized = false;
+
+        removeEventListeners();
+    }
 
 	/**
 	 * Inspect the client to see what it's capable of, this
@@ -4936,6 +4952,7 @@
 		initialize: initialize,
 		configure: configure,
 		sync: sync,
+        destroy: destroy,
 
 		// Navigation methods
 		slide: slide,
