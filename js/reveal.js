@@ -4489,7 +4489,8 @@
 					}
 				}
 
-				event.preventDefault();
+				// removed to allow scroll on touch devices
+				// event.preventDefault();
 
 			}
 			// There was only one touch point, look for a swipe
@@ -4519,13 +4520,17 @@
 				// triggered an action
 				if( config.embedded ) {
 					if( touch.captured || isVerticalSlide( currentSlide ) ) {
-						event.preventDefault();
+
+                        // removed to allow scroll on touch devices
+						// event.preventDefault();
 					}
 				}
 				// Not embedded? Block them all to avoid needless tossing
 				// around of the viewport in iOS
 				else {
-					event.preventDefault();
+
+                    // removed to allow scroll on touch devices
+					// event.preventDefault();
 				}
 
 			}
@@ -4533,7 +4538,9 @@
 		// There's a bug with swiping on some Android devices unless
 		// the default action is always prevented
 		else if( UA.match( /android/gi ) ) {
-			event.preventDefault();
+
+            // removed to allow scroll on touch devices
+			// event.preventDefault();
 		}
 
 	}
